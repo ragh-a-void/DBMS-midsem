@@ -36,7 +36,7 @@ CREATE TABLE `shortlisted` (
 
 LOCK TABLES `shortlisted` WRITE;
 /*!40000 ALTER TABLE `shortlisted` DISABLE KEYS */;
-INSERT INTO `shortlisted` VALUES (20001,'Audio'),(20002,'Video'),(20003,'Audio'),(20004,'Video'),(20005,'Audio'),(20006,'Video'),(20007,'Audio'),(20008,'Video'),(20009,'Video'),(20011,'Audio'),(20012,'Video'),(20013,'Audio'),(20014,'Video'),(20015,'Audio'),(20016,'Video'),(20017,'Video'),(20018,'Video'),(20019,'Audio'),(20020,'Video'),(20021,'Video'),(20022,'Video'),(20023,'Video'),(20024,'Video'),(20025,'Audio');
+INSERT INTO `shortlisted` VALUES (20001,'Audio'),(20002,'Video'),(20003,'Audio'),(20004,'Video'),(20005,'Audio'),(20006,'Video'),(20007,'Audio'),(20008,'Video'),(20009,'Video'),(20010,'Audio'),(20011,'Audio'),(20012,'Video'),(20013,'Audio'),(20014,'Video'),(20015,'Audio'),(20016,'Video'),(20017,'Video'),(20018,'Video'),(20019,'Audio'),(20020,'Video'),(20021,'Video'),(20022,'Video'),(20023,'Video'),(20024,'Video'),(20025,'Audio');
 /*!40000 ALTER TABLE `shortlisted` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-09 22:21:10
+-- Dump completed on 2021-03-10 11:16:09
