@@ -1,0 +1,12 @@
+set role all;
+select current_role();
+use midsem;
+select * from Trailers_view;
+update  Trailers_view set likes=0 ;
+select * from Approved_Albums;
+select * from distributor_personal_info;
+update distributor_personal_info set DistributorName="Cum Sociuus Corporation" where DistributorNo="A4M 1yizp";
+select * from distributor_own_albums;
+update distributor_own_albums set RetailPrice= 3305 where AlbumNo=10018 and DistributorNo="A4M 1yizp";
+select * from distributor_sold_albums;
+update distributor_sold_albums set DownloadDate=2020-10-16 where DownloadNo=40047;
