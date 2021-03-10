@@ -24,4 +24,14 @@ inner join short
 on S.CandidateNo=Short.num
 where S.CandidateNo=substring_index(user(), '@', 1);
 
+create view memberView 
+as with temp(mgid) as 
+(select MusicGroup.musicgroupid from musicgroup where musicgrou.MemberNo=substring_index(user(), '@', 1)) 
+select m.musicgroupid, m.moderatorno, m.type, r.Albumno, r.MemberNo, r.RolePlayed, album.Albumname, album.albumtype, album.approvalDate, album.URL from MusicGroup as m inner join roles as r on m.musicgroupid=r.musicgroupid and m.musicgroupid in (select mgid from temp) inner join Album on r.AlbumNo=Album.AlbumNo;
+drop table mt;
+create table mt 
+as with temp(mgid) as 
+(select roles.musicgroupid from roles where roles.MemberNo=substring_index(user(), '@', 1)) 
+select m.musicgroupid, m.moderatorno, m.type, r.Albumno, r.MemberNo, r.RolePlayed, album.Albumname, album.albumtype, album.approvalDate, album.URL from MusicGroup as m inner join roles as r on m.musicgroupid=r.musicgroupid and m.musicgroupid in (select mgid from temp) inner join Album on r.AlbumNo=Album.AlbumNo;
+
 grant select on PanelistView to "30001"@localhost;
