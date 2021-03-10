@@ -27,10 +27,11 @@ where S.CandidateNo=substring_index(user(), '@', 1);
 create view MemView
 as with temp(mgid) as 
 (select roles.musicgroupid from roles where roles.MemberNo=substring_index(user(), '@', 1)) 
-select m.musicgroupid, m.moderatorno, m.type, r.Albumno, r.MemberNo, r.RolePlayed, album.Albumname, album.albumtype, album.approvalDate, album.URL 
+select trailer.likes, trailer.dislikes, trailer.DateOfRelease, trailer.NumberOfVisits, m.musicgroupid, m.moderatorno, m.type, r.Albumno, r.MemberNo, r.RolePlayed, album.Albumname, album.albumtype, album.approvalstatus, album.approvalDate, album.URL 
 from MusicGroup as m 
 inner join roles as r 
 on m.musicgroupid=r.musicgroupid and m.musicgroupid in (select mgid from temp) 
-inner join Album on r.AlbumNo=Album.AlbumNo;
+inner join Album on r.AlbumNo=Album.AlbumNo
+inner join trailer on trailer.AlbumNo=Album.AlbumNo;
 
 grant select on PanelistView to "30001"@localhost;
