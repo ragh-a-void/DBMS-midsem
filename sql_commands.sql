@@ -77,7 +77,7 @@ CREATE TABLE Member (
         ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (MemberNo)
 );
-
+drop table Member;
 -- MusicGroup (ModeratorNo: integer (FK references Member(MemberNo)), Type:  enum{“pop”, “classic”, 
 -- “leisure”, “evergreen”}, MusicGroupID: integer)
 
@@ -90,7 +90,7 @@ CREATE TABLE MusicGroup (
         ON DELETE SET NULL ON UPDATE CASCADE,
     PRIMARY KEY (MusicGroupID)
 );
-
+drop table MusicGroup;
 -- Album(AlbumNo: integer, URL: varchar(50), AlbumName: varchar(30), Type:  enum{“Audio”/ “Video”},
 -- ApprovalStatus: enum {“Approved”, “Unapproved”} , ApprovalDate: date)
 
@@ -156,7 +156,7 @@ insert into downloadable values (1234, 111, "2020-01-01", 50);
 
 CREATE TABLE Downloadable (
     AlbumNo INT,
-    DistributorNo INT,
+    DistributorNo Varchar(30),
     DateOfRelease DATE NOT NULL,
     RetailPrice INT NOT NULL,
     FOREIGN KEY (AlbumNo)
@@ -173,7 +173,7 @@ CREATE TABLE Downloadable (
 -- integer (FK (AlbumNo, DistributorNo) references Downloadable(AlbumNo, DistributorNo)))
 
 drop table Download;
-
+drop table downloadable;
 SELECT 
     *
 FROM
@@ -188,7 +188,7 @@ CREATE TABLE Download (
     DownloadDate DATE NOT NULL,
     DownloadStatus ENUM('Successful', 'Failure') NOT NULL,
     AlbumNo INT,
-    DistributorNo INT,
+    DistributorNo Varchar(30),
     CONSTRAINT FKCheckDownload FOREIGN KEY (AlbumNo , DistributorNo)
         REFERENCES Downloadable (AlbumNo , DistributorNo),
     PRIMARY KEY (DownloadNo)
