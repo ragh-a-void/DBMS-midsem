@@ -41,3 +41,4 @@ for row in mycursor.fetchall():
                     for row3 in cursor3.fetchall():
                         MemberNo,MemberName=row3
                         print(MemberNo,MemberName,"\n")
+mydb.close() 
